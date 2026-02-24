@@ -1,7 +1,11 @@
 if __name__ == '__main__':
-    x = int(input())
-    y = int(input())
-    z = int(input())
     n = int(input())
-    result = [[i, j, k] for i in range(x + 1) for j in range(y + 1) for k in range(z + 1) if i + j + k != n]
-    print(result)
+    arr = map(int, input().split())
+    max1 = max2 = float('-inf')
+    for i in arr:
+        if i > max1:
+            max2 = max1
+            max1 = i
+        elif i > max2 and i != max1:
+            max2 = i
+print(max2)
