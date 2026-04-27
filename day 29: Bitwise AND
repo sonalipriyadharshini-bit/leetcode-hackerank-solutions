@@ -1,0 +1,18 @@
+#!/bin/python3
+import os
+
+# Complete the 'bitwiseAnd' function below.
+def bitwiseAnd(N, K):
+    # If (K-1) OR K is within bounds, (K-1) is the max possible A&B
+    if ((K - 1) | K) <= N:
+        return K - 1
+    else:
+        return K - 2
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    t = int(input().strip())
+    for t_itr in range(t):
+        n, k = map(int, input().split())
+        fptr.write(str(bitwiseAnd(n, k)) + '\n')
+    fptr.close()
